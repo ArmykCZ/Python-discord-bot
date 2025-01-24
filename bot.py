@@ -5,10 +5,9 @@ import commandy_bota
 class MyBot(commands.Bot):
     def __init__(self, command_prefix: str, intents: discord.Intents, **kwargs):
         super().__init__(command_prefix, intents=intents, **kwargs)
-        self.cog_list = ['commandy_bota.open_pack', 'commandy_bota.ahoj', "commandy_bota.chatgpt", "commandy_bota.kanaly", "commandy_bota.kategorie", "commandy_bota.vydelek", "commandy_bota.roast"]
+        self.cog_list = ['commandy_bota.open_pack', 'commandy_bota.ahoj', "commandy_bota.kanaly", "commandy_bota.roast"]
 
     async def setup_hook(self):
-        # Načtení cogů při spuštění
         for cog in self.cog_list:
             try:
                 cog_name = cog.split('.')[-1]
@@ -34,7 +33,6 @@ async def on_ready():
 
 
 
-# Přímo nastavení tokenu
 TOKEN = "Tvuj token"
 
 # Spuštění bota

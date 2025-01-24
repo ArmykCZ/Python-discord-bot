@@ -6,7 +6,6 @@ class Roast(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # Seznam náhodných roastů
     roasts = [
     "Jsi důvod, proč výrobci aut dávají varování před tím, aby řidiči nespoléhali jen na tempomat.",
     "Tvá hlava je tak prázdná, že by si ji Google mohl pronajmout jako datové úložiště.",
@@ -43,12 +42,9 @@ class Roast(commands.Cog):
     ]
 
 
-    # Command na roast
     @discord.app_commands.command(name='roast', description="Řekni někomu pravdu.")
     async def roast(self, interaction: discord.Interaction, user: discord.User):
-        # Náhodně vybere roast ze seznamu
         roast = random.choice(self.roasts)
-        # Odešle zprávu s označením uživatele
         await interaction.response.send_message(f"{user.mention}. {roast}")
 
 # Funkce pro přidání cogu do bota
